@@ -1,0 +1,6 @@
+{
+  "name": "Sentinel - AI Self-Healing Booking System",
+  "description": "A high-availability concert ticket booking simulator with AI-powered server failover and real-time monitoring.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

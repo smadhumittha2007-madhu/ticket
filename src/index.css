@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
+}
+
+@layer base {
+  :root {
+    --bg: #E4E3E0;
+    --ink: #141414;
+    --line: #A8A7A4;
+    --green: #2ECC71;
+    --red: #E74C3C;
+    --yellow: #F1C40F;
+    --white: #FFFFFF;
+  }
+
+  body {
+    @apply bg-[var(--bg)] text-[var(--ink)] antialiased font-sans;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-[var(--white)] border border-[var(--line)] flex flex-col;
+  }
+
+  .panel-header {
+    @apply px-4 py-3 border-b border-[var(--line)] bg-[#f0f0ef] flex justify-between items-center;
+  }
+
+  .panel-title {
+    @apply text-[11px] uppercase font-bold tracking-wider text-[#666];
+  }
+
+  .server-card {
+    @apply p-4 border border-[var(--line)] relative transition-all duration-200;
+  }
+
+  .status-dot {
+    @apply absolute top-4 right-4 w-2.5 h-2.5 rounded-full;
+  }
+
+  .logs-area {
+    @apply bg-[#1a1a1a] text-[#00FF00] font-mono p-3 text-xs overflow-hidden border-4 border-[#333];
+  }
+}
+
+.traffic-meter {
+  @apply h-10 bg-[#eee] relative mt-2.5 border border-[var(--line)];
+}
+
+.status-active-glow {
+  box-shadow: 0 0 8px var(--green);
+}
+
+.status-down-glow {
+  box-shadow: 0 0 8px var(--red);
+}
+
+.status-standby-glow {
+  box-shadow: 0 0 8px var(--yellow);
+}
